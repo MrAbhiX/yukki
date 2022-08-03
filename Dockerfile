@@ -1,9 +1,9 @@
 FROM nikolaik/python-nodejs:python3.9-nodejs18
 
 #clonning repo 
-RUN git clone https://github.com/Nobita-XD/music3.git /root/YukkiMusic
+RUN git clone https://github.com/MrAbhiX/VcUserBot.git /root/VcUserbot
 #working directory 
-WORKDIR /root/YukkiMusic
+WORKDIR /root/VcUserbot
 
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
@@ -12,6 +12,6 @@ RUN apt-get update -y && apt-get upgrade -y \
 # Install requirements
 RUN pip3 install -U -r requirements.txt
 
-ENV PATH="/home/YukkiMusic/bin:$PATH"
+ENV PATH="/home/VcUserbot/bin:$PATH"
 
-CMD ["python3","-m","YukkiMusic"]
+CMD ["python3","-m","VcUserbot"]
